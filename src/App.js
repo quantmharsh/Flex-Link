@@ -17,7 +17,7 @@ function App() {
     <div className="App">                 
     {/* xl means extra large screens sizes  //m is for margin  */}
       <Box width="400px" sx={{width:{xl:'1490px'}}} m="auto">
-     Hello Navbar
+   
         <Navbar/>
      
       <Routes>

@@ -34,7 +34,7 @@ const SearchExercises = ( {setBodyPart , bodyPart ,setExercises}) => {
        if(search)
        {
         //from utils folder
-        const exerciseData= await fetchData('https://exercisedb.p.rapidapi.com/exercises?limit=1300',exerciseOptions);
+        const exerciseData= await fetchData('https://exercisedb.p.rapidapi.com/exercises?limit=300',exerciseOptions);
         const searchExercised=exerciseData.filter(
           (exercise)=> exercise.name.toLowerCase().includes(search)
           ||exercise.target.toLowerCase().includes(search)
@@ -46,7 +46,7 @@ const SearchExercises = ( {setBodyPart , bodyPart ,setExercises}) => {
         window.scrollTo({top:2300 ,behavior:"smooth"})
         
 
-        console.log(exerciseData);
+        // console.log(exerciseData);
        }
   }
   
@@ -60,7 +60,7 @@ const SearchExercises = ( {setBodyPart , bodyPart ,setExercises}) => {
         <Typography fontWeight={700}
         sx={{ fontSize:{lg:'45px' ,xs:'30px'}}}
         mb="50px" textAlign="center">
-            Awesome Exercises To <br/> Start With
+           Start Strong:<br/> Awesome Beginner Exercise🔥
             </Typography>
             <Box position="relative" mb={72} >
            <TextField height="75px"
@@ -85,21 +85,22 @@ const SearchExercises = ( {setBodyPart , bodyPart ,setExercises}) => {
              textTransform:'none',
              width:{
                 lg:'175px' ,xs:'80px' },
+            
              fontSize:{lg:'20px' ,xs:'14px'},
              height:'56px',
              position:"absolute",
              right:'0'
-           }}
+           }} 
            onClick={handleSearch}>Search</Button>
             </Box>
             <Box sx={{width:'100%' ,position:'relative' ,p:'20px'}}>
               {/* //it is the component to which we are passing our data */}
-               <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
+               <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} isBodyPart/>
 
             </Box>
             
             </Stack>
   )
 }
-
+ 
 export default SearchExercises

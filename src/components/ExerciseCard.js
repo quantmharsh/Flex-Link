@@ -1,10 +1,12 @@
 import React from 'react'
-import { Button, Link ,Stack, Typography } from '@mui/material'
+import { Button ,Stack, Typography } from '@mui/material'
+import { Link } from 'react-router-dom';
+import ExerciseDetail from '../pages/ExerciseDetail'
 const ExerciseCard = ({exercise}) => {
   return (
-    <div>
+    
         
-        <Link className='exercise-card' underline='none' to={`/exercise/ ${exercise.id}`} >
+        <Link className='exercise-card' underline='none' to={`/exercise/${exercise.id}`} >
         <img src={exercise.gifUrl}  alt={exercise.name} loading='lazy' style={ {borderRadius:'20px'}} />
         <Stack direction="row" >
             <Button sx={{ ml:'21px' ,color:"#fff" ,background:'#fcc757' ,fontSize:'14px',
@@ -15,6 +17,7 @@ const ExerciseCard = ({exercise}) => {
           borderRadius:'20px' ,textTransform:"capitalize" ,underline:"none"   }}>
     {exercise.target}
             </Button>
+          
      
         </Stack> 
         
@@ -24,7 +27,7 @@ const ExerciseCard = ({exercise}) => {
         
             </Link>
            
-    </div>
+   
   )
 }
 

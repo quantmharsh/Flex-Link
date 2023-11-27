@@ -23,7 +23,7 @@ const Exercises = ( {exercises , bodyPart , setExercises}) => {
 
 
      setCurrentPage(value);
-     window.scrollTo({top:1800 ,behavior:"smooth"})
+     window.scrollTo({top:1600 ,behavior:"smooth"})
  }
  useEffect(() => {
     const  fetchExerciseData= async()=>{
@@ -31,10 +31,10 @@ const Exercises = ( {exercises , bodyPart , setExercises}) => {
         if(bodyPart==='all')
 
         {
-         exerciseData=  await fetchData('https://exercisedb.p.rapidapi.com/exercises?limit=1300',exerciseOptions);
+         exerciseData=  await fetchData('https://exercisedb.p.rapidapi.com/exercises?limit=1000',exerciseOptions);
         }
         else{
-          exerciseData=await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,exerciseOptions);
+          exerciseData=await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}?limit=1000`,exerciseOptions);
         }
         setExercises(exerciseData);
     }
